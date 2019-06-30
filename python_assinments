@@ -1,0 +1,530 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the radius of a circle in cm: 5\n",
+      "The area of the circle of 5.0 radius is 78.54 cm^2.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#1_assignment\n",
+    "\n",
+    "import math\n",
+    "x = math.pi\n",
+    "radius = float(input(\"Enter the radius of a circle in cm: \"))\n",
+    "r = math.pow(radius, 2)\n",
+    "area = x*r\n",
+    "A = round(area, 3)\n",
+    "print(\"The area of the circle of\",radius,\"radius is\",A,\"cm^2.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter integer to check either it is even or odd or zero : 67889\n",
+      "The given integer is odd\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2_assignment\n",
+    "num = int(input(\"Enter integer to check either it is even or odd or zero : \"))\n",
+    "if num in range(2,100001,2):\n",
+    "    print(\"The given integer is even\")\n",
+    "elif num in range(1,100002,2):\n",
+    "    print(\"The given integer is odd\")\n",
+    "else:\n",
+    "    print(\"The given integer is zero\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter numerator: 10000\n",
+      "Enter denominator: 99\n",
+      "10000 is not completely divisible by 99\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3_assignment\n",
+    "num = int(input(\"Enter numerator: \"))\n",
+    "den = int(input(\"Enter denominator: \"))\n",
+    "if num/den in range(1000):\n",
+    "    print(num,\"is completely divisible by\",den)\n",
+    "else:\n",
+    "        print(num,\"is not completely divisible by\",den)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter date: 06/12/2019\n"
+     ]
+    },
+    {
+     "ename": "ValueError",
+     "evalue": "invalid literal for int() with base 10: '06/12/2019'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-1-c74030eeeeb0>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m()\u001b[0m\n\u001b[0;32m      3\u001b[0m \u001b[0mmonth_1\u001b[0m \u001b[1;33m=\u001b[0m \u001b[1;36m30\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[0mmonth_2\u001b[0m \u001b[1;33m=\u001b[0m \u001b[1;36m31\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 5\u001b[1;33m \u001b[0mfirst_date\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0minput\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"Enter date: \"\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;31mValueError\u001b[0m: invalid literal for int() with base 10: '06/12/2019'"
+     ]
+    }
+   ],
+   "source": [
+    "#4_assignment\n",
+    "import math\n",
+    "import datetime\n",
+    "from datetime import date\n",
+    "first_date = input(\"Enter first date in format DD/MM/YY: \")\n",
+    "date_1 = datetime.datetime.strptime(first_date, '%d/%m/%Y').date()\n",
+    "second_date = input(\"Enter second date in format DD/MM/YY: \")\n",
+    "date_2 = datetime.datetime.strptime(second_date, '%d/%m/%Y').date()\n",
+    "#date_1.day\n",
+    "#date_2.year\n",
+    "diff_year = date_2.year - date_1.year\n",
+    "#print(\"diff in year\", diff_year)\n",
+    "diff_month = date_2.month - date_1.month\n",
+    "diff_day = date_2.day - date_1.day\n",
+    "days_in_year = 365*diff_year\n",
+    "days_in_month = 30.4167*diff_month\n",
+    "final_diff = days_in_year + days_in_month + diff_day\n",
+    "print(\"The difference in between two dates is\", math.ceil(final_diff),\"days\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the radius of a sphere in cm: 2\n",
+      "The volume of a sphere of 2 radius is 33.51 cm^3.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#5_assignment\n",
+    "import math\n",
+    "a = math.pi\n",
+    "radi = float(input(\"Enter the radius of a sphere in cm: \"))\n",
+    "v = math.pow(radi, 3)\n",
+    "volume = (4/3)*a*v\n",
+    "V = round(volume, 3)\n",
+    "print(\"The volume of a sphere of\",radi,\"radius is\",V,\"cm^3.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter string: 89\n",
+      "How many times you would like to copy string? 9\n",
+      "          ********************\n",
+      "89  89  89  89  89  89  89  89  89  "
+     ]
+    }
+   ],
+   "source": [
+    "#6_assignment\n",
+    "statement = input(\"Enter string: \")\n",
+    "repeat = int(input(\"How many times you would like to copy string? \"))\n",
+    "#print(\"\\n\")\n",
+    "for sapce in range(10):\n",
+    "    print(\" \", end=\"\")\n",
+    "for star in range(20):\n",
+    "    print(\"*\",end=\"\")\n",
+    "print(\"\")\n",
+    "for b in range(repeat):\n",
+    "    print(statement, \" \" , end = \"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter first date in format DD/MM/YY: 12/09/2019\n",
+      "Enter second date in format DD/MM/YY: 12/08/2018\n",
+      "The difference in between two dates is -395 days\n"
+     ]
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "27\n",
+      "8\n"
+     ]
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2019"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "date.year\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "8"
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "date.month"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "datetime.date(2019, 8, 13)"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "date\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "afaq\n",
+      "khan\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"afaq\")\n",
+    "print(\"khan\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
